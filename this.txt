@@ -1,0 +1,47 @@
+    var obj = {
+
+      age: '25',
+
+      findageArrowFn: () => {
+
+       console.log(this.age)
+
+      },
+
+      findAgeNormalFn: function(){
+
+       console.log(this.age)
+
+      }
+
+     }
+
+
+
+     obj.findageArrowFn();
+
+     obj.findAgeNormalFn();
+
+     normal function uses this from the object by which they had been invoked where as arrow function used this from their enclosing lexical scope
+
+     
+output:-
+
+   undefined
+25
+ important aspect of arrow functions is that they behave differently from normal functions. The difference is subtle but important. Arrow functions do not have their own value of this. The value of this in an arrow function is inherited from the enclosing (lexical) scope.
+
+Functions have a special variable this that refers to the object via which the method was invoked. As the value of this is dynamically given based on the function invocation, it is sometimes called dynamic this. A function is executed in two scopes-lexical and dynamic.
+
+
+
+
+
+AND AS THIS KEYWORD IN THE ARROW FUNCTION USES ITS PARENT SCOPE AS ITS REFERENCE WE GET UNDEFINED and during the global execution context in the memory creation phase js had alreay given the age=undefined so due to hoisting property we get UNDEFINED as output.
+
+
+
+WHERE AS IN NORMAL FUNCTION IT IS DEPENDENT ON THE OBJECT IT WAS INVOKED FROM THAT IS WHY WE ARE GETTING 25.
+
+
+
